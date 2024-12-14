@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --background-color: #1a1a1a;
+            --card-color: #2d2d2d;
+            --text-color: #ffffff;
+            --text-secondary: #b3b3b3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: var(--background-color);
+            display: flex;
+            justify-content: center;
+            padding: 50px 20px;
+            min-height: 100vh;
+            perspective: 1000px;
+        }
+
+        .profile-container {
+            background: var(--card-color);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 600px;
+            padding: 40px;
+            transform-style: preserve-3d;
+            transition: transform 0.5s ease;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotateX(0) rotateY(0); }
+            25% { transform: translateY(-10px) rotateX(2deg) rotateY(2deg); }
+            75% { transform: translateY(10px) rotateX(-2deg) rotateY(-2deg); }
+        }
+
+        .profile-header {
+            text-align: center;
+            margin-bottom: 40px;
+            transform-style: preserve-3d;
+        }
+
+        .profile-picture {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 25px;
+            border: 4px solid var(--primary-color);
+            box-shadow: 0 0 20px rgba(74, 144, 226, 0.3);
+            transform: translateZ(30px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-picture:hover {
+            transform: translateZ(50px) scale(1.05);
+            box-shadow: 0 0 30px rgba(74, 144, 226, 0.5);
+        }
+
+        .profile-name {
+            font-size: 32px;
+            color: var(--text-color);
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            transform: translateZ(20px);
+        }
+
+        .profile-title {
+            color: var(--primary-color);
+            font-size: 18px;
+            font-weight: 500;
+            transform: translateZ(15px);
+        }
+
+        .info-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            transform: translateZ(10px);
+            transition: transform 0.3s ease;
+        }
+
+        .info-item:hover {
+            transform: translateZ(20px) scale(1.02);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .info-label {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .info-content {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .social-links {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            transform: translateZ(20px);
+        }
+
+        .social-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: 2px solid var(--primary-color);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-color);
+            color: var(--text-color);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(74, 144, 226, 0.4);
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: rgba(74, 144, 226, 0.2);
+            color: var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: var(--primary-color);
+            color: var(--text-color);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .profile-container {
+                padding: 20px;
+            }
+            
+            .profile-picture {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile-header">
+            <img src="C:\Users\MAYUR JADHAV\OneDrive\Documents\profileimage.jpg" alt="profile-picture" class="profile-picture">
+            <h1 class="profile-name">Mayur Jadhav</h1>
+            <p class="profile-title">Android Developer</p>
+        </div>
+
+        <div class="profile-info">
+            <div class="info-item">
+                <div class="info-label">About Me</div>
+                <div class="info-content">
+                    I'm a passionate Android developer with 6 months of experience in creating 
+                    beautiful and functional Android apps. I specialize in XML, Kotlin, and SDK.
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-label">Contact</div>
+                <div class="info-content">
+                    Email: mj379738@gmail.com<br>
+                    Phone: (+91) 7387442129<br>
+                    Location: Solapur, Maharashtra, India
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-label">Skills</div>
+                <div class="skills-container">
+                    <span class="skill-tag">XML</span>
+                    <span class="skill-tag">Kotlin</span>
+                    <span class="skill-tag">SDK</span>
+                    <span class="skill-tag">Android Studio</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">C++</span>
+                    <span class="skill-tag">C</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">HTML</span>
+                    <span class="skill-tag">CSS</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Node.js</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="social-links">
+            <a href="https://linkedin.com/in/mayur-jadhav-22671a322" target="_blank">LinkedIn</a>
+            <a href="https://github.com/MayurJadhav1212" target="_blank">GitHub</a>
+            <a href="https://x.com/ja77843256" target="_blank">Twitter</a>
+        </div>
+    </div>
+</body>
+</html>
